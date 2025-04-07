@@ -1,7 +1,7 @@
 raytune:
   log_dir: 
-  num_cpus: 63
-  num_gpus: 4
+  num_cpus: 64
+  num_gpus: 1
   num_samples: 10
   num_concurrent_trials: 10
   reuse_actors: true
