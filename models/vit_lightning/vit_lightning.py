@@ -196,7 +196,8 @@ class ViTLightning(pl.LightningModule):
         dropout=0.1,
         learning_rate=1e-3,
         batch_size=32,
-        num_workers=4
+        num_workers=4,
+        data_dir='/home/spencer/Deployments/raytune_slurm_sandbox/data'
     ):
         super().__init__()
         self.save_hyperparameters()
@@ -215,7 +216,7 @@ class ViTLightning(pl.LightningModule):
         self.upsample_factor = int(img_size // 32) # 32 is the size of the CIFAR-10 images
         self.upsampler = EdsrModel.from_pretrained('eugenesiow/edsr', scale=self.upsample_factor)
         self.num_workers = num_workers
-        self.data_dir = '/home/spencer/Deployments/raytune_slurm_sandbox/data'
+        self.data_dir = data_dir
     
     def forward(self, x):
         return self.model(x)
@@ -415,7 +416,7 @@ class ViTLightning(pl.LightningModule):
 
 if __name__ == "__main__":
     # Initialize model and trainer
-    model = ViTLightning(batch_size=64, num_workers=8)
+    model = ViTLightning(data_dir='./data',batch_size=64, num_workers=8)
     
     # Initialize trainer with TensorBoard logger
     trainer = pl.Trainer(
