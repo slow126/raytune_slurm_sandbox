@@ -10,7 +10,7 @@ raytune:
   num_to_keep: 10
   metric: val/val_loss
   search_alg: OptunaSearch
-  concurrent_trials: 4
+  concurrent_trials: 1
   num_workers: 1
   cpus_per_worker: 7
   gpus_per_worker: 0.25
