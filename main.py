@@ -163,7 +163,8 @@ if __name__ == "__main__":
     if args.node_ip is not None:
         # ray_init_args["address"] = f"ray://{args.node_ip}:{args.node_port}"
         ray_init_args["_node_ip_address"] = f"{args.node_ip}"
-    # ray_init_args["num_cpus"] = base_config_dict['raytune']['num_cpus']
+    ray_init_args["num_cpus"] = base_config_dict['raytune']['num_cpus']
+    ray_init_args["num_gpus"] = base_config_dict['raytune']['num_gpus']
     # ray_init_args["runtime_env"] = {"env_vars": {"CUDA_VISIBLE_DEVICES": os.environ["CUDA_VISIBLE_DEVICES"]}}
 
 
