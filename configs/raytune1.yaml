@@ -50,4 +50,4 @@ model:
     learning_rate: 1e-3
     batch_size: 32
     num_workers: 4
-    data_dir: ${DATA_DIR}
+    data_dir: ${oc.env:DATA_DIR}
