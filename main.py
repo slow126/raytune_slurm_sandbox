@@ -151,15 +151,16 @@ if __name__ == "__main__":
 
 
     ray_results_dir = base_config_dict['raytune']['log_dir']
+    ray_init_args = {}
     # Convert ray_results_dir to absolute path
     if ray_results_dir is not None:
         ray_results_dir = os.path.abspath(ray_results_dir)
         print(f"Ray results directory: {ray_results_dir}")
         Path(ray_results_dir).mkdir(exist_ok=True, parents=True)
+        ray_init_args["_temp_dir"] = ray_results_dir
     else:
         ray_results_dir = None
         print("Ray results directory not set, using default")
-    ray_init_args = {}
     if args.node_ip is not None:
         # ray_init_args["address"] = f"ray://{args.node_ip}:{args.node_port}"
         ray_init_args["_node_ip_address"] = f"{args.node_ip}"

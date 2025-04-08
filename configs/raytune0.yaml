@@ -1,5 +1,5 @@
 raytune:
-  log_dir: 
+  log_dir: "/home/slow1/ray_results_ez"
   num_cpus: 64
   num_gpus: 2
   num_samples: 10
@@ -10,11 +10,11 @@ raytune:
   num_to_keep: 10
   metric: val/val_loss
   search_alg: OptunaSearch
-  concurrent_trials: 1
+  concurrent_trials: 4
   num_workers: 1
   cpus_per_worker: 7
   gpus_per_worker: 0.5
-  log_dir: "/home/slow1/ray_results_ez"
+  
 
 
 
