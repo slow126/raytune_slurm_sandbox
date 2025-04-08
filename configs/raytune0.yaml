@@ -1,7 +1,7 @@
 raytune:
   log_dir: 
-  num_cpus: 32
-  num_gpus: 1
+  num_cpus: 64
+  num_gpus: 2
   num_samples: 10
   num_concurrent_trials: 10
   reuse_actors: true
@@ -13,7 +13,9 @@ raytune:
   concurrent_trials: 1
   num_workers: 1
   cpus_per_worker: 7
-  gpus_per_worker: 0.25
+  gpus_per_worker: 0.5
+  log_dir: "/home/slow1/ray_results_ez"
+
 
 
   params_to_tune:

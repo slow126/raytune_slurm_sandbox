@@ -1,0 +1,7 @@
+Fixes
+1. export OPENBLAS_NUM_THREADS=1 # Limits the number of threads used by openblas and numpy
+2. export RAY_worker_register_timeout_seconds=600 # Increases the timout for worker registration. required for large clusters
+
+
+
+
